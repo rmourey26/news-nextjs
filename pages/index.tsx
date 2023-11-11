@@ -15,17 +15,16 @@ export const getServerSideProps: GetServerSideProps<NewsPageProps> = async () =>
   const response = await fetch('https://newsapi.org/v2/top-headlines?country=ca&apiKey=' + process.env.NEWS_API_KEY);
   const newsResponse: NewsResponse = await response.json();
   return {
-    props: {
-      newsArticles: newsResponse.articles,
-    }
+    props: { newsArticles: newsResponse.articles }
   }
+  // let error go to 500 page
 }
 
 export default function NewsPage({ newsArticles }: NewsPageProps) {
   return (
     <>
       <Head>
-        <title key='title'>Newe</title>
+        <title key='title'>News</title>
       </Head>
       <main>
         <h1>News</h1>

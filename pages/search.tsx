@@ -6,8 +6,8 @@ import { Button, Form, Spinner } from "react-bootstrap";
 
 const SearchNewsPage = () => {
     const [searchResults, setSearchResults] = useState<NewsArticle[] | null>(null);
-    const [searchResultsLoading, setSeaarchResultsLoading] = useState<boolean>(false);
-    const [searchResultsLoadingIsError, setSeaarchResultsLoadingIsError] = useState<boolean>(false);
+    const [searchResultsLoading, setSearchResultsLoading] = useState<boolean>(false);
+    const [searchResultsLoadingIsError, setSearchResultsLoadingIsError] = useState<boolean>(false);
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -16,16 +16,16 @@ const SearchNewsPage = () => {
         if (searchQuery) {
             try {
                 setSearchResults(null);
-                setSeaarchResultsLoadingIsError(false);
-                setSeaarchResultsLoading(true);
+                setSearchResultsLoadingIsError(false);
+                setSearchResultsLoading(true);
                 const response = await fetch('/api/search-news?q=' + searchQuery);
                 const articles: NewsArticle[] = await response.json();
                 setSearchResults(articles);
             } catch (error) {
                 console.error(error);
-                setSeaarchResultsLoadingIsError(true);
+                setSearchResultsLoadingIsError(true);
             } finally {
-                setSeaarchResultsLoading(false);
+                setSearchResultsLoading(false);
             }
         }
     }

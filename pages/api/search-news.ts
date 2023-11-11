@@ -3,10 +3,10 @@ import { NewsResponse } from '@/models/NewsArticles';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
-  reqest: NextApiRequest,
+  request: NextApiRequest,
   response: NextApiResponse
 ) {
-  const searchQuery = reqest.query.q?.toString();
+  const searchQuery = request.query.q?.toString();
   if (!searchQuery) {
     return response.status(400).json({ errorMessage: 'Please provide a search query' });
   } else {
