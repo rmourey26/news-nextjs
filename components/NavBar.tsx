@@ -27,9 +27,9 @@ const NavBar = () => {
                                 <NavDropdown.Item as={Link} href="/categories/technology">Technology</NavDropdown.Item>
                             </NavDropdown>
                         )}
-                        <NavDropdown title='Language' id='language-dropdown'>
+                        <NavDropdown title='Country' id='country-dropdown'>
                             <NavDropdown.Item as={Link} href='/countries/ca' onClick={() => handleCountryChange('ca')} >Canada</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} href='/countries/ua' onClick={() => handleCountryChange('ua')} >Українська</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} href='/countries/ua' onClick={() => handleCountryChange('ua')} >Українa</NavDropdown.Item>
                             <NavDropdown.Item as={Link} href='/countries/us' onClick={() => handleCountryChange('us')} >USA</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
