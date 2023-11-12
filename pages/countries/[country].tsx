@@ -4,22 +4,18 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-interface CategoryNewsPageProps {
+interface CountryNewsPageProps {
     newsArticles: NewsArticle[],
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const categorySlugs = [ // this could be coming from an API
-        "business",
-        "entertainment",
-        "general",
-        "health",
-        "science",
-        "sports",
-        "technology",
+    const countryOptions = [ // this could be coming from an API
+        'ca',
+        'ua',
+        'us'
     ];
 
-    const paths = categorySlugs.map(slug => ({ params: { category: slug } }));
+    const paths = countryOptions.map(option => ({ params: { country: option } }));
 
     return {
         paths,
@@ -27,9 +23,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps: GetStaticProps<CategoryNewsPageProps> = async ({ params }) => {
-    const category = params?.category?.toString();
-    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=ca&category=${category}&apiKey=${process.env.NEWS_API_KEY}`);
+export const getStaticProps: GetStaticProps<CountryNewsPageProps> = async ({ params }) => {
+    const country = params?.country?.toString();
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${process.env.NEWS_API_KEY}`);
     const newsResponse: NewsResponse = await response.json();
     return {
         props: { newsArticles: newsResponse.articles },
@@ -38,11 +34,11 @@ export const getStaticProps: GetStaticProps<CategoryNewsPageProps> = async ({ pa
     // let error go to 500 page
 }
 
-const CategoryNewsPage = ({ newsArticles }: CategoryNewsPageProps) => {
+const CountryNewsPage = ({ newsArticles }: CountryNewsPageProps) => {
     const router = useRouter();
-    const categoryName = router.query.category?.toString();
+    const countryCode = router.query.country?.toString();
 
-    const title = "Category: " + categoryName;
+    const title = "Country code: " + countryCode;
 
     return (
         <>
@@ -61,4 +57,4 @@ const CategoryNewsPage = ({ newsArticles }: CategoryNewsPageProps) => {
     );
 }
 
-export default CategoryNewsPage;
+export default CountryNewsPage;
