@@ -5,3 +5,7 @@ dist
 sm
 navbar
 img
+esnext
+esModuleInterop
+jsx
+next-env.d.ts
