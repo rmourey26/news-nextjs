@@ -7,6 +7,14 @@
         "latex",
         "plaintext",
         "jsonc",
-        "typescriptreact"
-    ]
+        "typescriptreact",
+        "json",
+        "Log",
+        "javascript"
+    ],
+    "spellright.parserByClass": {
+        "Log": {
+            "parser": "code"
+        }
+    }
 }
