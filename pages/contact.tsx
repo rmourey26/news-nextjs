@@ -12,25 +12,24 @@ const ContactPage = () => {
         <div className="mx-auto max-w-lg">
           {/* Create a p element for the phone number */}
           <p className="mb-4">
-            <span className="font-bold">Phone:</span> +1 (437) 985-2581
+            <span className="font-bold">Phone:</span> +1.717.603.7465
           </p>
           {/* Create a p element for the address */}
           <p className="mb-4">
-            <span className="font-bold">Address:</span> 500 Sherbourne St.,
-            Unit. 2701 Toronto Ontario M4X1L1 Canada
+            <span className="font-bold">Address:</span> 30 N Gould St STE R Sheridan, WY USA 82801
           </p>
           {/* Create a p element for the website */}
           <p className="mb-4">
             <span className="font-bold">Website:</span>{' '}
-            <a href="https://turskyi.com" className="text-blue-500">
-              turskyi.com
+            <a href="https://blockchain-company.io" className="text-blue-500">
+              The Blockchain Company.IO
             </a>
           </p>
           {/* Create a p element for the email */}
           <p className="mb-4">
             <span className="font-bold">Email:</span>{' '}
-            <a href="mailto:dmytro@turskyi.com" className="text-blue-500">
-              dmytro@turskyi.com
+            <a href="mailto:inquire@blockchain-company.io" className="text-blue-500">
+              inquire@blockchain-company.io
             </a>
           </p>
         </div>
