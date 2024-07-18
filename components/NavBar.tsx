@@ -52,8 +52,8 @@ const NavBar = () => {
                 <NavDropdown.Item as={Link} href="/categories/science">
                   Science
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} href="/categories/sports">
-                  Sports
+                <NavDropdown.Item as={Link} href="/categories/cryptocurrency">
+                  Crypto
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} href="/categories/technology">
                   Technology
