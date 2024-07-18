@@ -16,8 +16,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     'general',
     'health',
     'science',
-    'sports',
+    'cryptocurrency',
     'technology',
+    
   ];
 
   const paths = categorySlugs.map((slug) => ({ params: { category: slug } }));
